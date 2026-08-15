@@ -9,3 +9,134 @@ Country
       ├── Id
       ├── Name
       └── Description
+      
+      
+# TravelInformationAPI
+
+A practice ASP.NET Core Web API project for working with RESTful API concepts, routing, HTTP status codes, and child resources.
+
+## 🎯 Project Purpose
+
+This project was created as a practice project to learn and implement:
+
+* ASP.NET Core Web API
+* Controllers and API endpoints
+* HTTP methods and status codes
+* Attribute Routing
+* Route parameters
+* LINQ and `FirstOrDefault`
+* Parent and Child Resources
+* Swagger / OpenAPI
+* `IActionResult` and `ActionResult<T>`
+
+## 🛠️ Technologies
+
+* C#
+* ASP.NET Core
+* .NET
+* Swagger / OpenAPI
+* LINQ
+
+## 📦 Models
+
+### Country
+
+Each country contains:
+
+* `Id`
+* `Name`
+* `Capital`
+* `PointOfInterests`
+
+### PointOfInterest
+
+Each point of interest contains:
+
+* `Id`
+* `Name`
+* `Description`
+
+## 🚀 API Endpoints
+
+### Get all countries
+
+```http
+GET /api/countries
+```
+
+Returns all countries.
+
+**Response:** `200 OK`
+
+### Get a country by ID
+
+```http
+GET /api/countries/{id}
+```
+
+Returns a specific country.
+
+**Responses:**
+
+* `200 OK` — Country found
+* `404 Not Found` — Country does not exist
+
+### Get a country's points of interest
+
+```http
+GET /api/countries/{countryId}/pointsofinterests
+```
+
+Returns all points of interest belonging to a specific country.
+
+**Responses:**
+
+* `200 OK`
+* `404 Not Found` — Country does not exist
+
+### Get a specific point of interest
+
+```http
+GET /api/countries/{countryId}/pointsofinterests/{pointOfInterestId}
+```
+
+Returns a specific point of interest belonging to a specific country.
+
+**Responses:**
+
+* `200 OK`
+* `404 Not Found` — Country or point of interest does not exist
+
+## 📚 Concepts Practiced
+
+This project demonstrates nested routing such as:
+
+```text
+/api/countries
+/api/countries/{id}
+/api/countries/{countryId}/pointsofinterests
+/api/countries/{countryId}/pointsofinterests/{pointOfInterestId}
+```
+
+It also demonstrates searching collections with LINQ:
+
+```csharp
+FirstOrDefault(x => x.Id == id)
+```
+
+and returning appropriate HTTP responses such as:
+
+```text
+200 OK
+404 Not Found
+```
+
+## 🧪 Testing
+
+The API endpoints can be tested using Swagger UI.
+
+Run the project and open the Swagger page to explore and execute the available endpoints.
+
+## 📌 Project Status
+
+This is a practice project and will be extended with additional API operations and HTTP status code scenarios.
