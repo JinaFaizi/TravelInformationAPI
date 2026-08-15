@@ -7,7 +7,7 @@ namespace TravelInformationAPI.Controllers;
 [Route("api/[controller]")]
 public class CountriesController : ControllerBase
 {
-    private readonly new List<Country> _countries = new List<Country>()
+    private readonly List<Country> _countries = new List<Country>()
     {
         new Country
         {
@@ -43,13 +43,13 @@ public class CountriesController : ControllerBase
             {
                 new PointOfInterest
                 {
-                    Id = 1,
+                    Id = 3,
                     Name = "Colosseum",
                     Description = "Colosseum is in Italy"
                 },
                 new PointOfInterest
                 {
-                    Id = 2,
+                    Id = 4,
                     Name = "Trevi Fountain",
                     Description = "Trevi Fountain is in Italy"
                 },
@@ -66,14 +66,14 @@ public class CountriesController : ControllerBase
             {
                 new PointOfInterest
                 {
-                    Id = 1,
+                    Id = 5,
                     Name = "Chillon Castle",
                     Description = "Chillon Castle is in Switzerland"
                     
                 },
                 new PointOfInterest
                 {
-                    Id = 2,
+                    Id = 6,
                     Name = "Bernina Express",
                     Description = "Bernina Express is in Switzerland"
                     
