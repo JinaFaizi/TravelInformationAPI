@@ -113,4 +113,21 @@ public class CountriesController : ControllerBase
 
         return Ok(country.PointOfInterests);
     }
+
+    [HttpGet("{countryId}/pointsofinterests/{pointOfInterestId}")]
+    public ActionResult<PointOfInterest> GetPointOfInterest(int countryId, int pointOfInterestId)
+    {
+        var country = _countries.FirstOrDefault(x => x.Id == countryId);
+        if (country == null)
+        {
+            return NotFound();
+        }
+
+        var pointOfInterest = country.PointOfInterests.FirstOrDefault(p => p.Id == pointOfInterestId);
+        if (pointOfInterest == null)
+        {
+            return NotFound();
+        }
+        return Ok(pointOfInterest);
+    }
 }
