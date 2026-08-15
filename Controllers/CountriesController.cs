@@ -1,6 +1,88 @@
+using Microsoft.AspNetCore.Mvc;
+using TravelInformationAPI.Models;
+
 namespace TravelInformationAPI.Controllers;
 
-public class CountriesController
+[ApiController]
+[Route("api/[controller]")]
+public class CountriesController : ControllerBase
 {
-    
+    private readonly new List<Country> _countries = new List<Country>()
+    {
+        new Country
+        {
+            Id = 1,
+            Name = "France",
+            Capital = "Paris",
+
+            PointOfInterests = new List<PointOfInterest>()
+            {
+                new PointOfInterest
+                {
+                    Id = 1,
+                    Name = "Eiffel Tower",
+                    Description = "Eiffel Tower is in Paris"
+                },
+
+                new PointOfInterest
+                {
+                    Id = 2,
+                    Name = "Louvre Museum",
+                    Description = "Louvre Museum is in Paris"
+
+                }
+            }
+        },
+        
+        new Country{
+            Id = 2,
+            Name = "Italy",
+            Capital = "Rome",
+            
+            PointOfInterests = new List<PointOfInterest>()
+            {
+                new PointOfInterest
+                {
+                    Id = 1,
+                    Name = "Colosseum",
+                    Description = "Colosseum is in Italy"
+                },
+                new PointOfInterest
+                {
+                    Id = 2,
+                    Name = "Trevi Fountain",
+                    Description = "Trevi Fountain is in Italy"
+                },
+               
+            }
+        },
+        new Country 
+        {
+            Id = 3,
+            Name = "switzerland",
+            Capital = "Bern",
+            
+            PointOfInterests = new List<PointOfInterest>()
+            {
+                new PointOfInterest
+                {
+                    Id = 1,
+                    Name = "Chillon Castle",
+                    Description = "Chillon Castle is in Switzerland"
+                    
+                },
+                new PointOfInterest
+                {
+                    Id = 2,
+                    Name = "Bernina Express",
+                    Description = "Bernina Express is in Switzerland"
+                    
+                }
+               
+            }
+            
+            
+        }
+    };
+
 }
