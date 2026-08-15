@@ -101,4 +101,16 @@ public class CountriesController : ControllerBase
         }
         return Ok(country);
     }
+
+    [HttpGet("{countryId}/pointsofinterests")]
+    public ActionResult<IEnumerable<PointOfInterest>> GetPointOfInterests(int countryId)
+    {
+        var country = _countries.FirstOrDefault(c => c.Id == countryId);
+        if (country == null)
+        {
+            return NotFound();
+        }
+
+        return Ok(country.PointOfInterests);
+    }
 }
