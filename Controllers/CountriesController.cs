@@ -84,5 +84,21 @@ public class CountriesController : ControllerBase
             
         }
     };
+    
+    [HttpGet]
+    public ActionResult<IEnumerable<Country>> Get()
+    {
+        return Ok(_countries);
+    }
 
+    [HttpGet("{id}")]
+    public IActionResult Get(int id)
+    {
+        var country = _countries.FirstOrDefault(x => x.Id == id);
+        if (country == null)
+        {
+            return NotFound();
+        }
+        return Ok(country);
+    }
 }
